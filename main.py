@@ -26,7 +26,7 @@ def main(path_file, num):
 
 if __name__ == "__main__":
     # user_scan = input("Podaj nazwę pliku skanu: ").strip()
-    user_scan = "770198-kopia.jpg"
+    user_scan = "865246_1str-kopia.jpg"
     user_input = input("Ile fragmentów (promptów) chcesz użyć?: ").strip()
 
     result = main(user_scan, int(user_input))

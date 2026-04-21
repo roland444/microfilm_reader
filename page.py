@@ -1,4 +1,5 @@
 from prompts import build_first_prompt
+from merge import merge_fragments
 from api import gemini_api
 from def_label import define_label
 import json
@@ -35,7 +36,6 @@ class Page:
                 clean_text = response.text.replace('```json', '').replace('```', '').strip()
                 json_response = json.loads(clean_text)
 
-                # Obsługa zarówno pojedynczego obiektu jak i tablicy wierszy
                 if isinstance(json_response, list):
                     final_data.extend(json_response)
                 else:
@@ -47,7 +47,8 @@ class Page:
             except Exception as e:
                 return f"Wystąpił błąd we fragmencie {i+1}: {e}"
 
-        return final_data
+        print(f"Zebrano {len(final_data)} fragmentów. Rozpoczynam scalanie...")
+        return merge_fragments(final_data, structure)
 
     def twoPages(self):
         width, height = self.img.size
@@ -98,4 +99,7 @@ class Page:
             except Exception as e:
                 return f"Wystąpił błąd we fragmencie {i+1}: {e}"
 
-        return {"lewa_strona": left_data, "prawa_strona": right_data}
+        print(f"Zebrano fragmenty. Rozpoczynam scalanie...")
+        merged_left = merge_fragments(left_data, structure)
+        merged_right = merge_fragments(right_data, structure)
+        return {"lewa_strona": merged_left, "prawa_strona": merged_right}
