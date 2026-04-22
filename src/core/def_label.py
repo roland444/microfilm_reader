@@ -1,5 +1,5 @@
-from api import gemini_api
-from prompts import def_label_prompt
+from src.api.client import gemini_api
+from src.utils.prompts import def_label_prompt
 import json
 
 def define_label(img):
