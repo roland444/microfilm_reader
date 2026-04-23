@@ -1,0 +1,285 @@
+{
+  "lewa_strona": [
+    {
+      "1821": {
+        "miesiac": "Die 11-ta Februarii.",
+        "nr_domu": "170 3/4"
+      },
+      "oblubieniec": {
+        "imie": "Vincentius Schmid Civis ex Austria oriundus. Theresiae famulae coelebis filius illegitimus.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "26.",
+        "celebs": "1.",
+        "wdowiec": "—"
+      },
+      "oblubienica": {
+        "imie": "Carolina Maria Rosalia Keiser Caroli Henrici Germani et Rosaliae Joannae Conj. leg. filia Leopoli oriunda. — Praehabitis attestatis baptismalibus utriusque Sponsorum, et producto Decreto Magistratus pro Sponsa qua Cive, habito etiam dispensatu de peractis in Oratorio Lutheranorum bannis.",
+        "religia": {
+          "katolicka": "—",
+          "inne_wyznanie": "Lutherana."
+        },
+        "wiek": "25.",
+        "celebs": "1.",
+        "vidua": "—"
+      },
+      "swiadkowie": {
+        "imie": "Vitus Hein — Aloys Winfard",
+        "conditio": "Sartor — [nieczytelne]"
+      },
+      "chrzcil": "Franciscus Turski Parochus"
+    },
+    {
+      "1821": {
+        "miesiac": "Die 11-ta Februarii.",
+        "nr_domu": "161 1/4"
+      },
+      "oblubieniec": {
+        "imie": "Stanislaus Kanczucki agricola ex Kleparow! Valenti et Mariannae Conj. legit. fil.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": null
+        },
+        "wiek": "18.",
+        "celebs": "1.",
+        "wdowiec": null
+      },
+      "oblubienica": {
+        "imie": "Thecla Kulakowska Antonii et Annae suburbanorum Conj. leg. fil. — Jako na niniejsze żenienie syna mojego pozwalam, świadczę. Walenty Kanczucki — Jako na niniejsze zamęście córki mojej zezwalam, zeznaję. Antoni Kułakowski — Presentibus et consentientibus parentibus utriusque Sponsorum, ut supra eorum Contestatio, habita facultate et dimissione ex parte Domini, id est praefectus Oeconomiae Civitatis pro parte Sponsi, et attestato de pactis ad eam S. anni Proclamationibus.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": null
+        },
+        "wiek": "20.",
+        "celebs": "1.",
+        "vidua": null
+      },
+      "swiadkowie": {
+        "imie": "Adalbertus Wikorski — Mathias Zygadlin — Antoni Kułakowski X",
+        "conditio": "murarius — agricola ex Kleparow"
+      },
+      "chrzcil": "Franciscus Turski Parochus"
+    },
+    {
+      "1821": {
+        "miesiac": "Die 15. Februarii.",
+        "nr_domu": "50 3/4"
+      },
+      "oblubieniec": {
+        "imie": "Nicolaus Komarzyński, murarius Georgii et Sophiae Conj. leg. fil. Jako na Ożenienie niniejsze Syna mojego pozwalam, zeznaje Jerzy Komarzyński X — Prahabitis necessariis Testimoniis, tum praevente et consentiente parente Sponsi, et habita facultate a Magistratu —",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": null
+        },
+        "wiek": "26",
+        "celebs": "1.",
+        "wdowiec": null
+      },
+      "oblubienica": {
+        "imie": "Rosalia Murawska, Serva Lucae et Brigidae agricolarum in Hodowice filia.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": null
+        },
+        "wiek": "27",
+        "celebs": "1.",
+        "vidua": null
+      },
+      "swiadkowie": {
+        "imie": "Michaël Królik X — Andreas Niedzielski X",
+        "conditio": "Suburbani murarius"
+      },
+      "chrzcil": "Franciscus Turski Parochus"
+    },
+    {
+      "1821": {
+        "miesiac": "Die 11. Martii.",
+        "nr_domu": "49 1/4"
+      },
+      "oblubieniec": {
+        "imie": "Mathias Jargasiewicz Servus auriga, ex Circulo Sanocensi oriundus, filius Pauli et Theresiae agricolarum, Leopoli a 6. annis manens.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "45.",
+        "celebs": "—",
+        "wdowiec": "1."
+      },
+      "oblubienica": {
+        "imie": "Marianna Bilecka, mercenaria, Jaroslaviensis oriunda, Adalberti et Annae Cybulski civium filia, post Jacobum Bilecki murarium Leopoli vidua.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "59.",
+        "celebs": "—",
+        "vidua": "1."
+      },
+      "swiadkowie": {
+        "imie": "Josephus Penczykowicz X — Gregorius Balikowski X",
+        "conditio": "mercenarii Servus"
+      },
+      "chrzcil": "Franciscus Turski Parochus"
+    }
+  ],
+  "prawa_strona": [
+    {
+      "1821": {
+        "miesiac": "Die 11. Martii.",
+        "nr_domu": "290 2/4"
+      },
+      "oblubieniec": {
+        "imie": "Franciscus Hauchelhammer. Cancellista Cassae c.[aesareo] r.[egiae] Mathiae et Theresiae de domo Blauth pistorum militarium ex Zawada Circ[uli] Tarnov[iensis] filius",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "25.",
+        "celebs": "1.",
+        "wdowiec": "—"
+      },
+      "oblubienica": {
+        "imie": "Maria Jurkiewicz. Feliciani et Magdalenae de domo Trygossowna dicanorum judicii vida functi filia",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "19.",
+        "celebs": "1.",
+        "vidua": "—"
+      },
+      "swiadkowie": {
+        "imie": "Aloizy Senkowski Michael Filipowicz",
+        "conditio": "Leśniczy ziemski. — Saponarius."
+      },
+      "chrzcil": "Fr. Stupni[nieczytelne] parochus"
+    },
+    {
+      "1821": {
+        "miesiac": "die 27. May.",
+        "nr_domu": "85 1/4"
+      },
+      "oblubieniec": {
+        "imie": "Joannes Halixki mercenarius Moscovia oriundus filius Josephi et Catharinae.",
+        "religia": {
+          "katolicka": "1",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "44",
+        "celebs": "1",
+        "wdowiec": "—"
+      },
+      "oblubienica": {
+        "imie": "Regina Lem. serva ex circulo Sanocen.[si] Andreae et Annae filia.",
+        "religia": {
+          "katolicka": "1",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "41",
+        "celebs": "1",
+        "vidua": "—"
+      },
+      "swiadkowie": {
+        "imie": "Valentinus Bieleski — Nicolaus Szczucki.",
+        "conditio": "Sutor — Famulus academ:[icus] Biblioth:[ecae]."
+      },
+      "chrzcil": "Mart.[inus] Jnatsek Coop.[erator]"
+    },
+    {
+      "1821": {
+        "miesiac": "die 27. Maji.",
+        "nr_domu": "563 2/4"
+      },
+      "oblubieniec": {
+        "imie": "Joannes Boleszczuk miles furminalis, Simonis et Mariae filius.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "37",
+        "celebs": "1.",
+        "wdowiec": "—"
+      },
+      "oblubienica": {
+        "imie": "Hedvigis Pszonak. Lotniv. Andreae et Theclae filia.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "34.",
+        "celebs": "1",
+        "vidua": "1."
+      },
+      "swiadkowie": {
+        "imie": "Joannes Lojecki — Michael Naworal",
+        "conditio": "lignifaber — lignifaber"
+      },
+      "chrzcil": "Martinus Znatrek Coop.[erator]"
+    },
+    {
+      "1821": {
+        "miesiac": "die 11. Junii.",
+        "nr_domu": "796 11/n"
+      },
+      "oblubieniec": {
+        "imie": "Theodorus Czipek mercenarius. Hyacinthi et Anastasiae filius.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": null
+        },
+        "wiek": "51.",
+        "celebs": null,
+        "wdowiec": "1."
+      },
+      "oblubienica": {
+        "imie": "Marianna Plaszewska Serva ex Kokoszyce (sic. Ztokov. oriunda, Leopoli a 10. annis commorans, Michaelis et Annae filia.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": null
+        },
+        "wiek": "30.",
+        "celebs": "1.",
+        "vidua": null
+      },
+      "swiadkowie": {
+        "imie": "Ignatius Hornieyski — Blasius Finger",
+        "conditio": "lignifaber — murarius"
+      },
+      "chrzcil": "Martinus Znatrek Coop.[erator]"
+    },
+    {
+      "1821": {
+        "miesiac": "die 23. augusti.",
+        "nr_domu": "286 11/n"
+      },
+      "oblubieniec": {
+        "imie": "Josephus Frankowski, miles penes vigilias aresticinii: Pauli et Sophiae agricolarum in Rossia oriundus filius.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "36.",
+        "celebs": "1.",
+        "wdowiec": "—"
+      },
+      "oblubienica": {
+        "imie": "Catharina Skowrońska, mercenaria, Alexandri Romanowski et Agnetis Sutorum filia.",
+        "religia": {
+          "katolicka": "1.",
+          "inne_wyznanie": "—"
+        },
+        "wiek": "36.",
+        "celebs": "—",
+        "vidua": "1."
+      },
+      "swiadkowie": {
+        "imie": "Vincentius Skowronski — Antonius Urban",
+        "conditio": "Servus administri Tabacae — lignifaber"
+      },
+      "chrzcil": "Franciscus Truski parochus"
+    }
+  ]
+}

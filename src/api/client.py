@@ -1,4 +1,4 @@
-from src.utils.progress import retry_with_status, console
+from utils.progress import retry_with_status, console
 from dotenv import load_dotenv
 from google import genai
 import os

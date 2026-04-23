@@ -1,0 +1,577 @@
+{
+  "lewa_strona": [
+    {
+      "miesiac": {
+        "data_urodzenia": "Martius 18",
+        "data_chrztu": "19"
+      },
+      "nr_domu": "61 1/2",
+      "imie": "Josepha.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "-",
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Antonius Baryllak — Sophia Fromnicka vel Mroczkowska — Quod idem miles Baryllak pro patre natae prolis inscribi petierit, seque signo Crucis inscripserit, testor patrini et",
+        "conditio": "Miles leg. Riandi [nieczytelne] Comp. nro 60. — Celebs serva."
+      },
+      "chrzestni": {
+        "imie": "Josephus Czaplarski — Antonina Orzechowska — Michael Holdowicz — Theresia Rodkowska",
+        "conditio": "servus — serva — sutor — serva"
+      },
+      "polozna": "Constantia Kwasniewska",
+      "chrzcil": "Franciscus Jurski Parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "18",
+        "data_chrztu": "21",
+        "orig_date": "1821-03-18"
+      },
+      "nr_domu": "110 3/4",
+      "imie": "Francisca Aloysia.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Andreas Wizthum — Anna de domo Sika",
+        "conditio": "Registrarius Lubliniensis — civis filia"
+      },
+      "chrzestni": {
+        "imie": "Joannes Salomon — Francisca Dybarzewska",
+        "conditio": "Registrans Lubliniensis — virgo."
+      },
+      "polozna": "Francisca Kostowska",
+      "chrzcil": "Martinus Znatrek Cooperator"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "19.",
+        "data_chrztu": "25."
+      },
+      "nr_domu": "42 3/4",
+      "imie": "Josephus Gabriel.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "1",
+        "dziewczynka": "-"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Josephus Dafchny — Elisabetha Libich",
+        "conditio": "Ton Künstner filia mercatoris"
+      },
+      "chrzestni": {
+        "imie": "Mathias Ulbrich — Francisca Libich",
+        "conditio": "Mercator — Avia nata"
+      },
+      "polozna": "Anna Russert",
+      "chrzcil": "Franciscus Turoski Parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "20",
+        "data_chrztu": "21."
+      },
+      "nr_domu": "95 1/2",
+      "imie": "Adalbertus.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "1",
+        "dziewczynka": "-"
+      },
+      "slubnosc": {
+        "slubny": "-",
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Joannes Kurczak — Anna Wisniowska — Quod idem miles Joannes Kurczak prolem pro sua recognoverit et pro patre inscribi voluit, testes patrini et",
+        "conditio": "Corporalis e Regim. Mareschal — Celebs serva"
+      },
+      "chrzestni": {
+        "imie": "Carolus Landoz — Antonina Wolanska — Franciscus Kotanski — Mariana Kowalcianka",
+        "conditio": "miles e Regi Mareschal — figuli uxor — ejusdem Regi miles — virgo"
+      },
+      "polozna": "Catharina Monczka.",
+      "chrzcil": "Martinus Znatrek Cooperator"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "20.",
+        "data_chrztu": "21."
+      },
+      "nr_domu": "242",
+      "imie": "Mariana.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Josephus Wolski — Tecla Bajewska",
+        "conditio": "serviens militis filia"
+      },
+      "chrzestni": {
+        "imie": "Josephus Chilinski — Mariana Weyrichin",
+        "conditio": "servus — virgo"
+      },
+      "polozna": "Maria Dzielkiewicz",
+      "chrzcil": "Martinus Znatalek Cooperator"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "20.",
+        "data_chrztu": "22."
+      },
+      "nr_domu": "58 1/2",
+      "imie": "Thecla Josepha.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Joannes Stankowski — Anastasia Dominicka",
+        "conditio": "Civis filia Officialis"
+      },
+      "chrzestni": {
+        "imie": "Casparus Jaikert — Thecla Rozner — Joannes Stankowski — Aloysia Pawka",
+        "conditio": "Scriniarii — pellionis uxor — Secretarius Camerae Domini — Civis uxor"
+      },
+      "polozna": "Catharina Hurk",
+      "chrzcil": "Martinus Bratzek Cooperator"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "21.",
+        "data_chrztu": "21."
+      },
+      "nr_domu": "61 1/2",
+      "imie": "Adalbertus.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "1",
+        "dziewczynka": "-"
+      },
+      "slubnosc": {
+        "slubny": "-",
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Pater ignotus — Antonina Orzechowska",
+        "conditio": "Celebs serva"
+      },
+      "chrzestni": {
+        "imie": "Casimirus Piatkiewicz — Ewa Caliszka",
+        "conditio": "Sutor — [nieczytelne] uxor"
+      },
+      "polozna": "Constantia Kwasniewska",
+      "chrzcil": "Franciscus Jurski Parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "22.",
+        "data_chrztu": "25."
+      },
+      "nr_domu": "60 1/4",
+      "imie": "Catharina.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Franciscus Ribota — Catharina de domo Anker",
+        "conditio": "Afuaring — sartoris filia"
+      },
+      "chrzestni": {
+        "imie": "Joannes Kowalski — Valentinus Milewski — Catharina Lisowska — Petronella Stawarska",
+        "conditio": "Liber seruus — lignifaber uxor — serui uxor"
+      },
+      "polozna": "Constantia Kwasniewska",
+      "chrzcil": "Franciscus Swidki parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "29 martii",
+        "data_chrztu": "1. Aprilis"
+      },
+      "nr_domu": "780 1/2",
+      "imie": "Francisca.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "-",
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Martinus Rymar — Elisabetha Paulina — Rosa Margaritha Gaithlin",
+        "conditio": "miles greg. 1 compag 6 — servi auxilii filia"
+      },
+      "chrzestni": {
+        "imie": "Antonius Gebory Arlamowski — Joannes Ziółkowski — Francisca",
+        "conditio": "Subditus — Pharmacopola — typographus filia — gr. agricola filia"
+      },
+      "polozna": "Catharina Moritka",
+      "chrzcil": "Franciscus Swidki parochus"
+    }
+  ],
+  "prawa_strona": [
+    {
+      "miesiac": {
+        "data_urodzenia": "31 martii",
+        "data_chrztu": "Aprilis 2."
+      },
+      "nr_domu": "158 1/2",
+      "imie": "Catharina Francisca.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Stanislaus Giniąda Rosalia Skrzyrzyńska",
+        "conditio": "auriga ruricola filia"
+      },
+      "chrzestni": {
+        "imie": "Joannes Łojczyk Thecla Dankowska",
+        "conditio": "ligni faber Regisfranki uxor"
+      },
+      "polozna": "Francisca Bednarska",
+      "chrzcil": "Jędrzej kooperat[or]"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "[nieczytelne]",
+        "data_chrztu": "2."
+      },
+      "nr_domu": "158 1/4",
+      "imie": "Francisca.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": null,
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": null
+      },
+      "rodzice": {
+        "imie": "Regina [nieczytelne]ska",
+        "conditio": "[nieczytelne]"
+      },
+      "chrzestni": {
+        "imie": "[nieczytelne]wska",
+        "conditio": "uxor"
+      },
+      "polozna": "Francisca Bednarska",
+      "chrzcil": "Knatsek Coop[erator]"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "4.",
+        "data_chrztu": "5."
+      },
+      "nr_domu": "88 1/4",
+      "imie": "Catharina.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": null,
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": null,
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Theresia Salamon",
+        "conditio": "serva"
+      },
+      "chrzestni": {
+        "imie": "Joannes Ribling Magdalena Habowska Francisz[us] Jukrzowski Apollonia Krzewińska",
+        "conditio": "sutor vidua seryny fabri ferarii uxor"
+      },
+      "polozna": "Catharina Mosicka",
+      "chrzcil": "Martinus Knatsek Coop[erator]"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "5.",
+        "data_chrztu": "5."
+      },
+      "nr_domu": "28 3/4",
+      "imie": "Catharina.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": null,
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": null
+      },
+      "rodzice": {
+        "imie": "Joannes Strauss Catharina Czekalska",
+        "conditio": "faber lignar[ius] lignifabrifilia"
+      },
+      "chrzestni": {
+        "imie": "Joannes Łojecki Catharina Chmielewska",
+        "conditio": "lignifaber uxor armarii"
+      },
+      "polozna": "Francisca Bednarska",
+      "chrzcil": "Franciscus Jurski Parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "5.",
+        "data_chrztu": "8."
+      },
+      "nr_domu": "277 1/4",
+      "imie": "Ignatius.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": "1",
+        "dziewczynka": null
+      },
+      "slubnosc": {
+        "slubny": null,
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Regina Radłowiczowa",
+        "conditio": "serva"
+      },
+      "chrzestni": {
+        "imie": "Petrus Giebrowicz Mariana Marcinkiewiczowa",
+        "conditio": "seryny victoris uxor"
+      },
+      "polozna": "Theresia Leśniowiczowa",
+      "chrzcil": "Knatsek Coop[erator]"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "8.",
+        "data_chrztu": "8."
+      },
+      "nr_domu": "24 2/4",
+      "imie": "Thecla Joanna.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": null,
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": null,
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Pater ignotus Catharina Sanbum",
+        "conditio": "Celebs serva"
+      },
+      "chrzestni": {
+        "imie": "Joannes Kuhn Casimirus Kowalski Thecla Piotrowska Joanna Kuhn",
+        "conditio": "Sartor ligni faber fabri lignarii uxor sartoris uxor"
+      },
+      "polozna": "Maria Mandel",
+      "chrzcil": "Franciscus Turski Parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "9.",
+        "data_chrztu": "9."
+      },
+      "nr_domu": "49 1/4",
+      "imie": "Mariana.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": null,
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": null,
+        "nieslubny": "1"
+      },
+      "rodzice": {
+        "imie": "Mariana Przemka",
+        "conditio": "mercenaria Celebs"
+      },
+      "chrzestni": {
+        "imie": "Laurentius Damburowicz Maria Rozaliewiczowna",
+        "conditio": "Arularius virgo"
+      },
+      "polozna": "Constan.[tia] Kwasniewska",
+      "chrzcil": "Knatzek Coop.[erator]"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "17.",
+        "data_chrztu": "22."
+      },
+      "nr_domu": "98 2/4",
+      "imie": "Xaverius.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": "1",
+        "dziewczynka": null
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": null
+      },
+      "rodzice": {
+        "imie": "Nicolaus Kubaczkiewicz Thecla de domo Kulibowska",
+        "conditio": "Pistnummi. uxor aurigae"
+      },
+      "chrzestni": {
+        "imie": "Joannes Michlicki Thecla Mirzwicka",
+        "conditio": "Sutor vidua"
+      },
+      "polozna": "Maria Dziubkiewicz",
+      "chrzcil": "Franciscus Turski Parochus"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "20.",
+        "data_chrztu": "24."
+      },
+      "nr_domu": "100 1/a",
+      "imie": "Catharina.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": "-"
+      },
+      "plec": {
+        "chlopiec": "-",
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": "-"
+      },
+      "rodzice": {
+        "imie": "Joannes Faifer Maria Staroszczacka",
+        "conditio": "mercenarius agricola filia"
+      },
+      "chrzestni": {
+        "imie": "Mathias Zygarlinski Regina Apostołowiczowa",
+        "conditio": "agricola agricola uxor"
+      },
+      "polozna": "Cath:[arina] Marnicka",
+      "chrzcil": "Jnátsek Coop:[erator]"
+    },
+    {
+      "miesiac": {
+        "data_urodzenia": "22.",
+        "data_chrztu": "23."
+      },
+      "nr_domu": "110 2/4",
+      "imie": "Theresia.",
+      "religia": {
+        "katolicka": "1",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "chlopiec": null,
+        "dziewczynka": "1"
+      },
+      "slubnosc": {
+        "slubny": "1",
+        "nieslubny": null
+      },
+      "rodzice": {
+        "imie": "Vincentius Schmidt Carolina de domo Kaiser. religi:[onis] Luthera.",
+        "conditio": "Aurichalcarius filia fabri armarii"
+      },
+      "chrzestni": {
+        "imie": "Stephanus Swetlich Theresia Seidler",
+        "conditio": "Sutor uxor fabri ferarii"
+      },
+      "polozna": "Anna Kozłowska",
+      "chrzcil": "Franciscus Turski Parochus"
+    }
+  ]
+}

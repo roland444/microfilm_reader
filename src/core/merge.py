@@ -1,6 +1,6 @@
-from src.api.client import gemini_api
-from src.utils.prompts import build_merge_prompt
-from src.utils.translation import normalize_keys
+from api.client import gemini_api
+from utils.prompts import build_merge_prompt
+from utils.translation import normalize_keys
 import json
 
 def merge_fragments(raw_fragments: list, structure: dict) -> list:

@@ -1,8 +1,8 @@
-from src.utils.prompts import build_first_prompt
-from src.api.client import gemini_api
-from src.core.def_label import define_label
-from src.core.merge import merge_fragments
-from src.utils.progress import log_step, with_progress_bar, console
+from utils.prompts import build_first_prompt
+from api.client import gemini_api
+from core.def_label import define_label
+from core.merge import merge_fragments
+from utils.progress import log_step, with_progress_bar, console
 import json
 
 class Page:

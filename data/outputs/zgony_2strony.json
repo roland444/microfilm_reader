@@ -1,0 +1,496 @@
+{
+  "lewa_strona": [
+    {
+      "dzien": {
+        "miesiac": "Aprilis",
+        "dzien": "1."
+      },
+      "nr_domu": "122.",
+      "imie": "Pleb: Matthäus Kuchciak caelebs.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Annorum 13.",
+      "przyczyna_smierci": "Ulcus."
+    },
+    {
+      "dzien": {
+        "miesiac": "Aprilis",
+        "dzien": "6."
+      },
+      "nr_domu": "44.",
+      "imie": "Pleb: Rosalia Kowal filia Joannis et Thecla.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Mensium 6.",
+      "przyczyna_smierci": "Ulcus."
+    },
+    {
+      "dzien": {
+        "miesiac": "Aprilis",
+        "dzien": "21."
+      },
+      "nr_domu": "96.",
+      "imie": "Pleb: Marianna Kuchciak uxor Josephi Cista.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 42.",
+      "przyczyna_smierci": "Colica."
+    },
+    {
+      "dzien": {
+        "miesiac": "Aprilis",
+        "dzien": "21."
+      },
+      "nr_domu": "37.",
+      "imie": "Pleb: Catharina Kalinowska filia Vincentii et Anna.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 3 1/2.",
+      "przyczyna_smierci": "Consumptio."
+    },
+    {
+      "dzien": {
+        "miesiac": "Aprilis",
+        "dzien": "22."
+      },
+      "nr_domu": "43.",
+      "imie": "Pleb: Gregorius Rybak maritus Francisca Kuezyryszyn.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Annorum 53.",
+      "przyczyna_smierci": "Colica."
+    },
+    {
+      "dzien": {
+        "miesiac": "Aprilis",
+        "dzien": "23."
+      },
+      "nr_domu": "84.",
+      "imie": "Pleb: Anna Pieniuta filia Gregorii et Mariana.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Mensium 5.",
+      "przyczyna_smierci": "Debilitas."
+    },
+    {
+      "dzien": {
+        "miesiac": "Junius",
+        "dzien": "1."
+      },
+      "nr_domu": "35.",
+      "imie": "Pleb: Catharina Rybak filia Nicolai et Francisca.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Mensium 6.",
+      "przyczyna_smierci": "Physis."
+    },
+    {
+      "dzien": {
+        "miesiac": "Augustus",
+        "dzien": "25."
+      },
+      "nr_domu": "8.",
+      "imie": "Antonius Kulik",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Mensium 2.",
+      "przyczyna_smierci": "Debilitas"
+    },
+    {
+      "dzien": {
+        "miesiac": "8br.",
+        "dzien": "30."
+      },
+      "nr_domu": "44.",
+      "imie": "Joannes Horob",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Annorum 32.",
+      "przyczyna_smierci": "Apoplexia."
+    },
+    {
+      "dzien": {
+        "miesiac": "December",
+        "dzien": "1."
+      },
+      "nr_domu": "16.",
+      "imie": "Agnes Puchłabey",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 17.",
+      "przyczyna_smierci": "Febris."
+    },
+    {
+      "dzien": {
+        "miesiac": "December",
+        "dzien": "7."
+      },
+      "nr_domu": "10.",
+      "imie": "Agatha Vidua.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "[nieczytelne]",
+      "przyczyna_smierci": "[nieczytelne]"
+    },
+    {
+      "dzien": {
+        "miesiac": "December",
+        "dzien": "13."
+      },
+      "nr_domu": "16.",
+      "imie": "Plebe:[ia] Agatha Puhlabey Vidua.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 37.",
+      "przyczyna_smierci": "Febris"
+    },
+    {
+      "dzien": {
+        "miesiac": "December",
+        "dzien": "21."
+      },
+      "nr_domu": "64.",
+      "imie": "Plebe:[ius] Nicolaus Furman filius Adalberti et Justinae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Hebdom:[adae] 3.",
+      "przyczyna_smierci": "Debilitas"
+    },
+    {
+      "dzien": {
+        "miesiac": "December",
+        "dzien": "28."
+      },
+      "nr_domu": "42.",
+      "imie": "Plebe:[ius] Antonius Kerczynski filius Joannis et Catharinae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Mens:[is] 6.",
+      "przyczyna_smierci": "Debilitas"
+    }
+  ],
+  "prawa_strona": [
+    {
+      "dzien": {
+        "miesiac": "Januarius 9. 11."
+      },
+      "nr_domu": "12.",
+      "imie": "Pleb:[is] Petronella Jurczykowa Vidua.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 62.",
+      "przyczyna_smierci": "Febris."
+    },
+    {
+      "dzien": {
+        "miesiac": "Januarius 17. 19."
+      },
+      "nr_domu": "57.",
+      "imie": "Pleb:[is] Matthaeus Baran filius Josephi et Mariannae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": ".."
+      },
+      "wiek": "Annorum 4.",
+      "przyczyna_smierci": "Febris."
+    },
+    {
+      "dzien": {
+        "miesiac": "Januarius 18."
+      },
+      "nr_domu": "22.",
+      "imie": "Pleb:[is] Francisca de Czarna Zacharię Kalimon uxor.",
+      "religia": {
+        "katolicka": "..",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "..",
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 20.",
+      "przyczyna_smierci": "Febris."
+    },
+    {
+      "dzien": {
+        "miesiac": "Januarius 20. 22."
+      },
+      "nr_domu": "91.",
+      "imie": "Pagus Samotryhowcze 1838. Pleb:[ejus] Adamus Hasiak filius Theodori et Annae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": ".."
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": ".."
+      },
+      "wiek": "Mensis 1.",
+      "przyczyna_smierci": "Debilitas."
+    },
+    {
+      "dzien": {
+        "miesiac": "Januarius 23."
+      },
+      "nr_domu": "29.",
+      "imie": "Pleb:[is] Anna de Muszora Bednarz uxor Michaelis.",
+      "religia": {
+        "katolicka": "..",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "..",
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 40.",
+      "przyczyna_smierci": "Febris."
+    },
+    {
+      "dzien": {
+        "miesiac": "Februarius 14. 16."
+      },
+      "nr_domu": "55.",
+      "imie": "Pleb:[ejus] Laurentius Plichta filius Laurentii et Rosaliae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": ".."
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": ".."
+      },
+      "wiek": "Annorum 8.",
+      "przyczyna_smierci": "Consumptio."
+    },
+    {
+      "dzien": {
+        "miesiac": "Martius 21. 23."
+      },
+      "nr_domu": "36.",
+      "imie": "Pleb:[ei] Josephus Sobol filius Joannis et Anastasiae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": ".."
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": ".."
+      },
+      "wiek": "Annorum 17.",
+      "przyczyna_smierci": "Phthisis."
+    },
+    {
+      "dzien": {
+        "miesiac": "Majus 20. 21."
+      },
+      "nr_domu": "30.",
+      "imie": "Pleb:[ejus] Michael Hadyszew...",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": ".."
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": ".."
+      },
+      "wiek": "Annorum 9.",
+      "przyczyna_smierci": "Obstructio."
+    },
+    {
+      "dzien": {
+        "miesiac": "Majus 29. 31."
+      },
+      "nr_domu": "39.",
+      "imie": "Pleb:[ei] Michael Hulaszczy Ortamus.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Annor[um] 9.",
+      "przyczyna_smierci": "Obstructio."
+    },
+    {
+      "dzien": {
+        "miesiac": "Julius 29. 31."
+      },
+      "nr_domu": "38.",
+      "imie": "Pagus Trybuchowce 1838. Pleb:[eja] Marianna Kostruska filia Danielis et Clarae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": ".."
+      },
+      "plec": {
+        "mezczyzna": "..",
+        "kobieta": "1."
+      },
+      "wiek": "Mensis 5.",
+      "przyczyna_smierci": "Debilitas."
+    },
+    {
+      "dzien": {
+        "miesiac": "September 10. 12."
+      },
+      "nr_domu": "28.",
+      "imie": "Pleb:[eja] Helena Kostruska Celebs.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": ".."
+      },
+      "plec": {
+        "mezczyzna": "..",
+        "kobieta": "1."
+      },
+      "wiek": "Annorum 18.",
+      "przyczyna_smierci": "Tumor."
+    },
+    {
+      "dzien": {
+        "miesiac": "September 10. 13."
+      },
+      "nr_domu": "33.",
+      "imie": "...ii et Rosaliae.",
+      "religia": {
+        "katolicka": null,
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Annor[um] 17.",
+      "przyczyna_smierci": "Phthisis."
+    },
+    {
+      "dzien": {
+        "miesiac": "September 16. 18."
+      },
+      "nr_domu": "69.",
+      "imie": "honestus Michael Kupnicki maritus Catharinae Jachimowicz.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": "1.",
+        "kobieta": null
+      },
+      "wiek": "Annor[um] 50.",
+      "przyczyna_smierci": "Gangrena."
+    },
+    {
+      "dzien": {
+        "miesiac": "December 1. 3."
+      },
+      "nr_domu": "51.",
+      "imie": "Pleb:[ei] Agnes Riminius filia Petri et Lenae.",
+      "religia": {
+        "katolicka": "1.",
+        "inne_wyznanie": null
+      },
+      "plec": {
+        "mezczyzna": null,
+        "kobieta": "1."
+      },
+      "wiek": "Anni 1.",
+      "przyczyna_smierci": "Phthisis."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-from src.core.page import Page
-from src.utils.progress import log_step, print_summary, console
+from core.page import Page
+from utils.progress import log_step, print_summary, console
 from rich.panel import Panel
 from PIL import Image
 import json
@@ -27,21 +27,21 @@ def main(path_file, num):
 
 if __name__ == "__main__":
     console.print(Panel.fit(
-        "[bold cyan]Microfilm Reader[/bold cyan]\n"
+        "[bold cyan]Metrics Reader[/bold cyan]\n"
         "[dim]Transkrypcja metryk kościelnych[/dim]",
         border_style="cyan"
     ))
 
     user_scan  = input("\nPodaj nazwę pliku skanu: ").strip()
-    user_input = input("Ile fragmentów (promptów) chcesz użyć?: ").strip()
+    user_input = input("Na ile fragmentów (promptów) chcesz podzielić skan?: ").strip()
 
-    result = main(user_scan, int(user_input))
+    result = main(f"data/inputs/{user_scan}", int(user_input))
 
     match = re.match(r"^[^.]+", user_scan)
     if match:
         output_name = match.group()
         output_name = re.sub(r"[\s\-]+", "_", output_name)
-        output_path = f"{output_name}.json"
+        output_path = f"data/outputs/{output_name}.json"
 
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(result, f, indent=2, ensure_ascii=False)

@@ -76,6 +76,8 @@ KEY_TRANSLATIONS = {
     "aetas"             : "wiek",
     "morbusetqualitasmortis"      : "przyczyna_smierci",
     "causamortis"       : "przyczyna_smierci",
+    "sepelivit"         : "duchowny",
+    "aspersit"          : "duchowny",
     "minister"          : "duchowny",
 }
 

@@ -1,0 +1,167 @@
+[
+  {
+    "1882": {
+      "nr_pozycji": "23.",
+      "miesiac": {
+        "data_urodzenia": "20. Martii.",
+        "data_chrztu": "25. Martii."
+      }
+    },
+    "nr_domu": "140.",
+    "imie": "Maria",
+    "religia_katolicka": "1.",
+    "plec": {
+      "chlopiec": "-",
+      "dziewczynka": "1."
+    },
+    "slubnosc": {
+      "slubny": "1.",
+      "nieslubny": "-"
+    },
+    "rodzice": {
+      "imie_i_stan": "Alexander Michnik mercenarius fil.[ius] Antonii et Josephae Kasprowa. — Maria Tokarowska filia Joannis et Agnetis Tokarowska"
+    },
+    "chrzestni": {
+      "imie_i_stan": "Andreas Wojdyło agricola Catharina Kuźniar uxor Joannis. —"
+    },
+    "polozna": "Catharina Witeszczak",
+    "chrzcil": "Benedictus Banach curatus"
+  },
+  {
+    "1882": {
+      "nr_pozycji": "24.",
+      "miesiac": {
+        "data_urodzenia": "21.",
+        "data_chrztu": "26."
+      }
+    },
+    "nr_domu": "15.",
+    "imie": "Catharina",
+    "religia_katolicka": "1.",
+    "plec": {
+      "chlopiec": "-",
+      "dziewczynka": "1."
+    },
+    "slubnosc": {
+      "slubny": "1.",
+      "nieslubny": "-"
+    },
+    "rodzice": {
+      "imie_i_stan": "Joannes [nieczytelne] et Annae Trębacz"
+    },
+    "chrzestni": {
+      "imie_i_stan": "Joannes"
+    }
+  },
+  {
+    "1882": {
+      "nr_pozycji": "24.",
+      "miesiac": {
+        "data_urodzenia": "23.",
+        "data_chrztu": "26. Martii."
+      }
+    },
+    "nr_domu": "547.",
+    "imie": "Paulina",
+    "religia_katolicka": "1.",
+    "plec": {
+      "chlopiec": null,
+      "dziewczynka": "1."
+    },
+    "slubnosc": {
+      "slubny": "1.",
+      "nieslubny": null
+    },
+    "rodzice": {
+      "imie_i_stan": "Ladislaus Wołgokowski operarius c. r. fabricae filius Sophiae servae. — Maria Szczerko fil.[ia] Adami et Catharinae Kijak conjug.[um]"
+    },
+    "chrzestni": {
+      "imie_i_stan": "Ludovicus Białkowski doliarius Rosalia Słoniewska celebs operaria"
+    },
+    "polozna": "Cath.[arina] Witeszczak",
+    "chrzcil": "B.[enedictus] Banach curatus."
+  },
+  {
+    "1882": {
+      "nr_pozycji": "25.",
+      "miesiac": {
+        "data_urodzenia": "25. Martii.",
+        "data_chrztu": "27. Martii."
+      }
+    },
+    "nr_domu": "48.",
+    "imie": "Carolus + 22/9. 882.",
+    "religia_katolicka": "1.",
+    "plec": {
+      "chlopiec": "1.",
+      "dziewczynka": null
+    },
+    "slubnosc": {
+      "slubny": "1.",
+      "nieslubny": null
+    },
+    "rodzice": {
+      "imie_i_stan": "Andreas Bukowski agricola filius Thomae et Rosaliae Majewska conjugum — Sophia Ciepła filia Simonis et Evae Snoreń conjugum."
+    },
+    "chrzestni": {
+      "imie_i_stan": "Joannes Opalamer agricola Anastasia Banach uxor Andreae."
+    },
+    "polozna": "Cath. Witeszczak.",
+    "chrzcil": "Bened. Banach Curatus."
+  },
+  {
+    "1882": {
+      "nr_pozycji": "26.",
+      "miesiac": {
+        "data_urodzenia": "27. Martii.",
+        "data_chrztu": "28. Martii."
+      }
+    },
+    "nr_domu": "205.",
+    "imie": "Josephus + 18/8. 882.",
+    "religia_katolicka": "1.",
+    "plec": {
+      "chlopiec": "1.",
+      "dziewczynka": null
+    },
+    "slubnosc": {
+      "slubny": "1.",
+      "nieslubny": null
+    },
+    "rodzice": {
+      "imie_i_stan": "Ignatius Szymasz Kienicz sutor filius Simonis et Rosaliae Frudzik conjugum — Eva Harapa filia Leonis et Evae Lemieszko conjugum."
+    },
+    "chrzestni": {
+      "imie_i_stan": "Onufrius Kaskiewicz pasiecznik Julia Markiewicz uxor Stanislai."
+    },
+    "polozna": "Anna Tuszisiewicz.",
+    "chrzcil": "Bened. Banach Curatus."
+  },
+  {
+    "1882": {
+      "nr_pozycji": "27.",
+      "miesiac": {
+        "data_urodzenia": "18/3",
+        "data_chrztu": "2/4"
+      }
+    },
+    "nr_domu": "45.",
+    "imie": "Josepha-Vanda (binom.)",
+    "religia_katolicka": "1",
+    "plec": {
+      "chlopiec": null,
+      "dziewczynka": "1."
+    },
+    "slubnosc": {
+      "slubny": "1.",
+      "nieslubny": "-"
+    },
+    "rodzice": {
+      "imie_i_stan": "Franciscus Gagat Komendant posterunku c.k. Żandarmeryi z Kulikowa filius Francisci et Mariae Riegel conjugum"
+    },
+    "chrzestni": {
+      "imie_i_stan": "D.[ominus] Josephus Michalski officialis c.[aesareo] r.[egius] fabricae — Maria Magdalena Terck uxor Josephi"
+    },
+    "polozna": "Cunegundis Małkowska"
+  }
+]

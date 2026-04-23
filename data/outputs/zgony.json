@@ -1,0 +1,439 @@
+[
+  {
+    "dzien": {
+      "1918": {
+        "januarius": {
+          "data_smierci": "15.",
+          "data_pochowku": "16."
+        }
+      }
+    },
+    "nr_domu": "17.",
+    "imie": "Catharina Uryga, fil.[ia] Adalberti et Antoninae.",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "5 annor.[um]",
+    "przyczyna_smierci": "phtisis.",
+    "duchowny": "P. Innocentius Gur."
+  },
+  {
+    "dzien": {
+      "1918": {
+        "januarius": {
+          "data_smierci": "23.",
+          "data_pochowku": "24."
+        }
+      }
+    },
+    "nr_domu": "115.",
+    "imie": "Maria Węgrzyn ux.[or] Joannis",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "48 annor.[um]",
+    "przyczyna_smierci": null,
+    "duchowny": "P. J. Guc."
+  },
+  {
+    "dzien": {
+      "1918": {
+        "februarius": {
+          "data_smierci": "15.",
+          "data_pochowku": "15."
+        }
+      }
+    },
+    "nr_domu": "23.",
+    "imie": "Catharina Pajda fil.[ia] Francisci et Cristinae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "1 hora",
+    "przyczyna_smierci": "Debilis natu.",
+    "duchowny": "Ant. Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "februarius": {
+          "data_smierci": "16.",
+          "data_pochowku": "17."
+        }
+      }
+    },
+    "nr_domu": "23.",
+    "imie": "Christina Pajda ux.[or] der.[relicta] Francisci",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "30 annor.[um]",
+    "przyczyna_smierci": "asthma",
+    "duchowny": "P. J. Guc."
+  },
+  {
+    "dzien": {
+      "1918": {
+        "februarius": {
+          "data_smierci": "23.",
+          "data_pochowku": "23."
+        }
+      }
+    },
+    "nr_domu": "7.",
+    "imie": "Casimira Węgrzyn, fil.[ia] Michaëlis et Magdalenae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "1 añor.[um]",
+    "przyczyna_smierci": null,
+    "duchowny": "Ant. Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "februarius": {
+          "data_smierci": "25.",
+          "data_pochowku": "25."
+        }
+      }
+    },
+    "nr_domu": "12",
+    "imie": "Elisabeth Świeth, fil,[ia] joañis et Catarinae.",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "2 mensis",
+    "przyczyna_smierci": "Debilis natu",
+    "duchowny": "Ant. Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "martius": {
+          "data_smierci": "3.",
+          "data_pochowku": "4."
+        }
+      }
+    },
+    "nr_domu": "59.",
+    "imie": "Joañes Bednarz fil.[ius] Victoris et mariae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "1 1/2 annor.[um]",
+    "przyczyna_smierci": "Convulsio",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "martius": {
+          "data_smierci": "3.",
+          "data_pochowku": "4."
+        }
+      }
+    },
+    "nr_domu": "59.",
+    "imie": "Joaña Bednarz fil.[ia] Victoris et mariae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "1 1/2 añor.[um]",
+    "przyczyna_smierci": "Convulsio",
+    "duchowny": "Ant. Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "martius": {
+          "data_smierci": "5.",
+          "data_pochowku": "6."
+        }
+      }
+    },
+    "nr_domu": null,
+    "imie": "Eugenia Mańkowska, fil.[ia] Joañis e Kraiówka ep.[iscopalis] Baworów",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "4 añor.[um]",
+    "przyczyna_smierci": "Coelus",
+    "duchowny": "Ant. Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "martius": {
+          "data_smierci": "22.",
+          "data_pochowku": "23."
+        }
+      }
+    },
+    "nr_domu": "92",
+    "imie": "Casimirus Figurski mar.[itus] derelictae Theresiae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "67 annor.[um]",
+    "przyczyna_smierci": "ex senectute",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "martius": {
+          "data_smierci": "30.",
+          "data_pochowku": "31."
+        }
+      }
+    },
+    "nr_domu": "83.",
+    "imie": "Victoria Węgrzyn ux.[or] der.[elicti] Petri.",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "61. annor.[um]",
+    "przyczyna_smierci": "ex senectute",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "aprilis": {
+          "data_smierci": "2.",
+          "data_pochowku": "3."
+        }
+      }
+    },
+    "nr_domu": "9.",
+    "imie": "Joañes Atre Karz, viduus post p.[iam] d.[efunctam] Anastasiam.",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "72 annor.[um]",
+    "przyczyna_smierci": "ex senectute",
+    "duchowny": "P.[ater] Innocentius Guk"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "aprilis": {
+          "data_smierci": "7.",
+          "data_pochowku": "8."
+        }
+      }
+    },
+    "nr_domu": "5.",
+    "imie": "Blasius Goraczyński mar.[itus] der.[elictae] Carolinae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "54 annor.[um]",
+    "przyczyna_smierci": "typhus",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "aprilis": {
+          "data_smierci": "22.",
+          "data_pochowku": "23."
+        }
+      }
+    },
+    "nr_domu": "235.",
+    "imie": "Rosalia Mikołajewicz, fil.[ia] Mariae et Joañis",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "7 annor.[um]",
+    "przyczyna_smierci": "typhus",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "majus": {
+          "data_smierci": "12.",
+          "data_pochowku": "13."
+        }
+      }
+    },
+    "nr_domu": "160.",
+    "imie": "Nicolaus Swirk, fil.[ius] Antonii et Catharinae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "3 annor.[um]",
+    "przyczyna_smierci": "convulsio",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "majus": {
+          "data_smierci": "13.",
+          "data_pochowku": "14."
+        }
+      }
+    },
+    "nr_domu": "128.",
+    "imie": "Angela Stasik ux.[or] Ladislai",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": null,
+      "kobieta": "1"
+    },
+    "wiek": "44 annor.[um]",
+    "przyczyna_smierci": "[nieczytelne]",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "majus": {
+          "data_smierci": "14.",
+          "data_pochowku": "15."
+        }
+      }
+    },
+    "nr_domu": "113.",
+    "imie": "Thomas Blicharski mar.[itus] der.[elictae] Carolinae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "69 annor.[um]",
+    "przyczyna_smierci": "asthma",
+    "duchowny": "Ant.[onius] Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "majus": {
+          "data_smierci": "28.",
+          "data_pochowku": "29."
+        }
+      }
+    },
+    "nr_domu": "188.",
+    "imie": "Petrus Dobosz fil.[ius] Ignatii et Catharinae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "2 1/2 annor.[um]",
+    "przyczyna_smierci": "convulsio",
+    "duchowny": "Ant. Romański"
+  },
+  {
+    "dzien": {
+      "1918": {
+        "majus": {
+          "data_smierci": "28.",
+          "data_pochowku": "29."
+        }
+      }
+    },
+    "nr_domu": "8.",
+    "imie": "Stanislaus Tybiński mar.[itus] der.[elictae] Agathae",
+    "religia": {
+      "katolicka": "1",
+      "inne_wyznanie": null
+    },
+    "plec": {
+      "mezczyzna": "1",
+      "kobieta": null
+    },
+    "wiek": "66 annor.[um]",
+    "przyczyna_smierci": "Ex senectute",
+    "duchowny": "Ant. Romański"
+  }
+]
