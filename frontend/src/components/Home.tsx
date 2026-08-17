@@ -1,4 +1,5 @@
 import { type ChangeEvent, type DragEvent, useState } from "react";
+import { Output } from "./Output";
 
 interface PreviewItem {
   id: string;
@@ -170,12 +171,8 @@ export function Home() {
 
         {error && <div className="error-box">{error}</div>}
 
-        {transcription && (
-          <div className="result-box">
-            <h3>Wynik transkrypcji:</h3>
-            <pre>{transcription}</pre>
-          </div>
-        )}
+        {/* Tutaj ma być wstawiony Output: */}
+        <Output data={transcription} />
       </div>
     </div>
   );

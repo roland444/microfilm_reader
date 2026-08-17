@@ -43,7 +43,7 @@ def process_scan(path_file: str, num: int):
 @app.post("/api/transcribe")
 async def transcribe(
     files: List[UploadFile] = File(...),
-    num_fragments: int = Form(4) # Domyślna liczba promptów, jeśli frontend jej nie przekaże
+    num_fragments: int = Form(1) # Domyślna liczba promptów, jeśli frontend jej nie przekaże
 ):
     all_results = []
 
