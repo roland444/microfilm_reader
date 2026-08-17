@@ -1,35 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica,
-    Arial, sans-serif;
-  line-height: 1.5;
-  color-scheme: dark;
-  color: #f1f5f9;
-  background-color: #0b0f19;
-}
-
-body {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 4rem 1rem;
-}
-
-#root {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-/* KONTENER */
 .container {
   width: 100%;
   display: flex;
@@ -39,6 +7,7 @@ body {
   gap: 1.75rem;
 }
 
+/* Nagłówki */
 .container h1 {
   font-size: 2.4rem;
   font-weight: 700;
@@ -60,7 +29,7 @@ body {
   gap: 1.5rem;
 }
 
-/* STREFA ZRZUTU SKANÓW */
+/* Strefa Drag & Drop */
 .upload-box {
   position: relative;
   display: flex;
@@ -76,9 +45,14 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Ukrycie standardowego inputu przeglądarki */
+/* Ukrycie domyślnego inputu pliku */
 .upload-box input[type="file"] {
-  display: none !important;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .upload-box:hover {
@@ -91,9 +65,10 @@ body {
   color: #cbd5e1;
   font-size: 0.95rem;
   font-weight: 500;
+  pointer-events: none;
 }
 
-/* PRZYCISK START */
+/* Przycisk akcji */
 .submit-btn {
   width: 100%;
   padding: 0.9rem 1.5rem;
@@ -119,7 +94,7 @@ body {
   opacity: 0.6;
 }
 
-/* PODGLĄD MINIATUREK */
+/* Sekcja podglądu kafelków */
 .preview-section {
   width: 100%;
   text-align: left;
@@ -130,6 +105,7 @@ body {
   font-weight: 600;
   color: #94a3b8;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: 0.75rem;
 }
 
@@ -170,13 +146,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.15s;
 }
 
 .delete-badge:hover {
   background: #dc2626;
 }
 
-/* WYNIK TRANSKRYPCJI / JSON */
+/* Komunikaty i wyniki JSON */
 .error-box {
   width: 100%;
   padding: 1rem;
@@ -209,7 +186,7 @@ body {
   padding: 1rem;
   border-radius: 0.5rem;
   color: #38bdf8;
-  font-family: monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.85rem;
   line-height: 1.4;
   overflow-x: auto;

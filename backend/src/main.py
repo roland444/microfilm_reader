@@ -1,17 +1,33 @@
 from core.page import Page
-from utils.progress import log_step, print_summary, console
-from rich.panel import Panel
+from utils.progress import log_step
+from fastapi import FastAPI, UploadFile, File, Form
+from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
+from typing import List
 import json
-import re
+import os
+import shutil
 
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+UPLOAD_DIR = "uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 @log_step("Wczytywanie i analiza obrazu", color="cyan")
 def load_image(path_file):
     with Image.open(path_file) as img:
         return img.copy()
 
-def main(path_file, num):
+def process_scan(path_file: str, num: int):
+    """Główna logika przeniesiona z dawnej funkcji main()"""
     img = load_image(path_file)
     width, height = img.size
 
@@ -22,32 +38,40 @@ def main(path_file, num):
     elif height < width:
         return page.twoPages()
     else:
-        return "Nieprawidłowa rozdzielczość (kwadrat)"
+        return {"error": "Nieprawidłowa rozdzielczość (kwadrat)"}
 
+@app.post("/api/transcribe")
+async def transcribe(
+    files: List[UploadFile] = File(...),
+    num_fragments: int = Form(4) # Domyślna liczba promptów, jeśli frontend jej nie przekaże
+):
+    all_results = []
 
-if __name__ == "__main__":
-    console.print(Panel.fit(
-        "[bold cyan]Metrics Reader[/bold cyan]\n"
-        "[dim]Transkrypcja metryk kościelnych[/dim]",
-        border_style="cyan"
-    ))
+    for file in files:
+        file_path = os.path.join(UPLOAD_DIR, file.filename)
+        
+        # 1. Zapis pliku na dysku
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
 
-    user_scan  = input("\nPodaj nazwę pliku skanu: ").strip()
-    user_input = input("Na ile fragmentów (promptów) chcesz podzielić skan?: ").strip()
+        # 2. Przetworzenie pliku przez klasę Page
+        try:
+            result = process_scan(file_path, num_fragments)
+            all_results.append({
+                "plik": file.filename,
+                "wynik": result
+            })
+        except Exception as e:
+            all_results.append({
+                "plik": file.filename,
+                "błąd": str(e)
+            })
 
-    result = main(f"data/inputs/{user_scan}", int(user_input))
-
-    match = re.match(r"^[^.]+", user_scan)
-    if match:
-        output_name = match.group()
-        output_name = re.sub(r"[\s\-]+", "_", output_name)
-        output_path = f"data/outputs/{output_name}.json"
-
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
-
-        records = result if isinstance(result, list) else result.get("lewa_strona", [])
-        print_summary(records, output_path)
-    else:
-        console.print("[red]Nie udało się ustalić nazwy pliku wyjściowego.[/red]")
-        console.print_json(json.dumps(result, ensure_ascii=False))
+    # 3. Zwrócenie zbiorczego wyniku w formacie oczekiwanym przez Reacta
+    return {
+        "status": "success",
+        "files_count": len(files),
+        # Zamieniamy słownik na ładnie sformatowany tekst JSON, 
+        # by React mógł go wyświetlić w tagu <pre>
+        "transcription": json.dumps(all_results, indent=2, ensure_ascii=False)
+    }
