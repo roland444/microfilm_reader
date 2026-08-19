@@ -1,8 +1,8 @@
 =============================================================
-  METRICS READER — Transkrypcja metryk kościelnych
+  METRICS READER (AVUS) — Transkrypcja metryk kościelnych
 =============================================================
 
-Narzędzie do automatycznej transkrypcji XIX-wiecznych metryk
+Aplikacja webowa do automatycznej transkrypcji XIX-wiecznych metryk
 kościelnych (chrztów, ślubów, zgonów) ze skanów do formatu JSON.
 Wykorzystuje model Gemini do analizy obrazów i ekstrakcji danych.
 
@@ -14,74 +14,114 @@ WYMAGANIA
 - Klucz API do Google Gemini (model: gemini-3-flash-preview)
 - Zależności z requirements.txt (patrz: INSTALACJA)
 
+Kluczowe technologie:
+  - Backend: FastAPI, Uvicorn, Pillow, google-genai, python-multipart
+  - Frontend: React 18+, TypeScript, Vite
+
 Kluczowe biblioteki:
   - google-genai        — klient Gemini API
   - Pillow              — przetwarzanie obrazów
-  - rich                — interfejs CLI (kolory, paski postępu)
   - python-dotenv       — wczytywanie zmiennych środowiskowych
+  - FastAPI             — budowanie wydajnego interfejsu API
 
 -------------------------------------------------------------
 INSTALACJA
 -------------------------------------------------------------
 
-1. Sklonuj lub rozpakuj projekt.
+1. Konfiguracja Backendu (Python):
+   a) Przejdź do katalogu projektu i utwórz środowisko wirtualne:
+        python -m venv venv
+        # Windows:
+        .\venv\Scripts\activate
+        # Linux/macOS:
+        source venv/bin/activate
 
-2. Przejdź do katalogu projektu:
-     cd metrics_reader
+   b) Zainstaluj wymagane biblioteki:
+        pip install -r requirements.txt
+      (Upewnij się, że masz: fastapi, uvicorn, python-multipart, pillow, google-genai)
 
-3. Zainstaluj zależności:
-     pip install -r requirements.txt
+   c) Utwórz plik .env w katalogu głównym:
+        GEMINI_API_KEY=twój_klucz_api_tutaj
 
-4. Uzupełnij plik .env, wpisując swój klucz API:
-     GEMINI_API_KEY=twój_klucz_api_tutaj
+2. Konfiguracja Frontendu (React):
+   a) Przejdź do katalogu frontendu:
+        cd frontend
+   b) Zainstaluj pakiety npm:
+        npm install
+
+-------------------------------------------------------------
+URUCHOMIENIE APLIKACJI
+-------------------------------------------------------------
+
+Potrzebne są dwa otwarte terminale:
+
+TERMINAL 1 — Serwer Backend (FastAPI):
+  uvicorn main:app --reload --port 8000
+
+TERMINAL 2 — Aplikacja Frontend (Vite):
+  cd frontend
+  npm run dev
+
+Po uruchomieniu otwórz w przeglądarce adres:
+  http://localhost:5173
 
 -------------------------------------------------------------
 STRUKTURA PROJEKTU
 -------------------------------------------------------------
 
 metrics_reader/
-├── .env                        # Klucz API
-├── requirements.txt            # Lista zależności Pythona
+├── .env                        # Klucz API (GEMINI_API_KEY)
+├── requirements.txt            # Zależności Pythona
 ├── README.txt                  # Ten plik
-├── data/
-│   ├── inputs/                 # Skany metryk (pliki JPG/PNG)
-│   └── outputs/                # Wyniki transkrypcji (pliki JSON)
-└── src/
-    ├── main.py                 # Punkt wejścia aplikacji
-    ├── api/
-    │   └── client.py           # Klient Gemini API
-    ├── core/
-    │   ├── page.py             # Logika podziału i przetwarzania strony
-    │   ├── def_label.py        # Wykrywanie struktury nagłówków tabeli
-    │   └── merge.py            # Scalanie i deduplikacja fragmentów
-    └── utils/
-        ├── prompts.py          # Prompty dla modelu Gemini
-        ├── translation.py      # Normalizacja kluczy (łacina → polski)
-        └── progress.py         # Dekoratory logowania i pasków postępu
+├── backend/ (lub src/)
+│   ├── main.py                 # Endpointy FastAPI + streaming zdarzeń
+│   ├── uploads/                # Katalog tymczasowy na wysyłane skany
+│   ├── api/
+│   │   └── client.py           # Klient Gemini API
+│   ├── core/
+│   │   ├── page.py             # Logika cięcia obrazu i generator kroków
+│   │   ├── def_label.py        # Ekstrakcja struktury nagłówków tabeli
+│   │   └── merge.py            # Scalanie i deduplikacja rekordów
+│   └── utils/
+│       ├── prompts.py          # Szablony promptów dla Gemini
+│       └── translation.py      # Normalizacja kluczy (łacina -> polski)
+│
+└── frontend/                   # Aplikacja React + TypeScript (Vite)
+    ├── package.json
+    ├── vite.config.ts
+    └── src/
+        ├── App.tsx
+        ├── index.css
+        └── components/
+            ├── Home.tsx        # Ekran wgrywania i podglądu skanów
+            ├── Home.css
+            ├── Loading.tsx     # Pasek postępu i animacja ładowania
+            ├── Loading.css
+            ├── Output.tsx      # Prezentacja JSON-a, pobieranie i kopiowanie
+            └── Output.css
 
 -------------------------------------------------------------
-UŻYCIE
+JAK DZIAŁA PRZETWARZANIE
 -------------------------------------------------------------
 
-Uruchom skrypt z poziomu katalogu src/:
-
-  cd src
-  python main.py
-
-Program zapyta o:
-  1. Nazwę pliku skanu (np. chrzty.jpg)
-     — plik musi znajdować się w katalogu data/inputs/
-  2. Liczbę fragmentów (promptów), na które podzielić skan
-     — zalecane: 3–6 dla jednej strony, 4–8 dla dwóch stron
-
-Wynik zostanie zapisany w data/outputs/<nazwa_pliku>.json
+1. Użytkownik przeciąga pliki graficzne (JPG, PNG) do strefy uploadu.
+2. Po kliknięciu „Rozpocznij transkrypcję”, frontend wysyła zapytanie
+   POST do endpointu `/api/transcribe` i nasłuchuje strumienia NDJSON.
+3. Backend po kolei dla każdego skanu:
+   a) Odczytuje proporcje (1 strona vs rozkładówka 2 stron).
+   b) Analizuje górne 20% obrazu w celu wykrycia nagłówków tabeli.
+   c) Dzieli skan na fragmenty z 20% nakładaniem (overlap).
+   d) Odpytuje Gemini dla każdego fragmentu, wysyłając statusy na żywo.
+   e) Scala fragmenty, usuwa duplikaty i normalizuje łacińskie nazwy pól.
+4. Po osiągnięciu 100% pasek postępu znika, a na ekranie pojawia się
+   gotowy wynik w formacie JSON z opcją pobrania na dysk.
 
 -------------------------------------------------------------
 JAK DZIAŁA APLIKACJA
 -------------------------------------------------------------
 
 1. WCZYTANIE OBRAZU
-   Skrypt wczytuje plik JPG/PNG z data/inputs/.
+   Skrypt wczytuje plik JPG/PNG
 
 2. WYKRYCIE ORIENTACJI
    Na podstawie proporcji obrazu program rozróżnia:
@@ -111,9 +151,6 @@ JAK DZIAŁA APLIKACJA
    automatycznie tłumaczone na polskie odpowiedniki
    (np. "chrzcil", "imie", "data_pochowku").
 
-8. ZAPIS WYNIKU
-   Gotowy JSON jest zapisywany do data/outputs/<nazwa>.json.
-
 -------------------------------------------------------------
 FORMAT WYJŚCIOWY (przykład dla chrzty.json)
 -------------------------------------------------------------
@@ -135,9 +172,6 @@ FORMAT WYJŚCIOWY (przykład dla chrzty.json)
   },
   ...
 ]
-
-Dla skanów dwustronnych wynik ma postać:
-  { "lewa_strona": [...], "prawa_strona": [...] }
 
 -------------------------------------------------------------
 OBSŁUGIWANE TYPY METRYK

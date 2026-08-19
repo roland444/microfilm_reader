@@ -1,8 +1,10 @@
 from core.page import Page
 from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from PIL import Image
 from typing import List
+import json
 import os
 import shutil
 
@@ -19,55 +21,72 @@ app.add_middleware(
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-def load_image(path_file):
+def load_image(path_file: str):
     with Image.open(path_file) as img:
         return img.copy()
 
-def process_scan(path_file: str, num: int):
-    img = load_image(path_file)
-    width, height = img.size
-
-    page = Page(num, img)
-    mode = "two" if width > height else "one"
-
-    # Konsumujemy generator, aby wyciągnąć wynik końcowy
-    final_result = None
-    for step in page.process(mode=mode):
-        if step.get("status") == "done":
-            final_result = step.get("result")
-        elif step.get("status") == "error":
-            return {"błąd": step.get("message")}
-
-    return final_result
-
-# Zmiana z async def na def (blokujące operacje I/O w tle)
-@app.post("/api/transcribe")
-def transcribe(
-    files: List[UploadFile] = File(...),
-    num_fragments: int = Form(1)
-):
+def stream_transcription(files: List[UploadFile], num_fragments: int):
+    total_files = len(files)
     all_results = []
 
-    for file in files:
+    for file_idx, file in enumerate(files):
         file_path = os.path.join(UPLOAD_DIR, file.filename)
-        
+
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        try:
-            result = process_scan(file_path, num_fragments)
-            all_results.append({
-                "plik": file.filename,
-                "wynik": result
-            })
-        except Exception as e:
-            all_results.append({
-                "plik": file.filename,
-                "błąd": str(e)
-            })
+        # Powiadomienie o rozpoczęciu pliku
+        yield json.dumps({
+            "status": "progress",
+            "label": f"[{file_idx + 1}/{total_files}] Wczytywanie: {file.filename}",
+            "pct": int((file_idx / total_files) * 100)
+        }) + "\n"
 
-    return {
-        "status": "success",
-        "files_count": len(files),
-        "results": all_results
-    }
+        img = load_image(file_path)
+        width, height = img.size
+
+        page = Page(num_fragments, img)
+        mode = "two" if width > height else "one"
+
+        file_result = None
+
+        # Przekazujemy na żywo każdy krok z Page.process()
+        for step in page.process(mode=mode):
+            if step.get("status") == "progress":
+                # Obliczanie całościowego procentu dla wszystkich plików
+                file_base_pct = (file_idx / total_files) * 100
+                step_pct = (step.get("pct", 0) / total_files)
+                combined_pct = int(file_base_pct + step_pct)
+
+                yield json.dumps({
+                    "status": "progress",
+                    "label": f"[{file_idx + 1}/{total_files}] {file.filename}: {step.get('label', 'Przetwarzanie...')}",
+                    "pct": min(combined_pct, 98)
+                }) + "\n"
+
+            elif step.get("status") == "done":
+                file_result = step.get("result")
+            elif step.get("status") == "error":
+                file_result = {"błąd": step.get("message")}
+
+        all_results.append({
+            "plik": file.filename,
+            "wynik": file_result
+        })
+
+    # Ostateczny wynik po zakończeniu wszystkich plików
+    yield json.dumps({
+        "status": "done",
+        "transcription": json.dumps(all_results, indent=2, ensure_ascii=False),
+        "pct": 100
+    }) + "\n"
+
+@app.post("/api/transcribe")
+def transcribe(
+    files: List[UploadFile] = File(...),
+    num_fragments: int = Form(3)
+):
+    return StreamingResponse(
+        stream_transcription(files, num_fragments),
+        media_type="application/x-ndjson"
+    )

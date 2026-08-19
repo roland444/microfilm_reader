@@ -9,23 +9,18 @@ interface PreviewItem {
   url: string;
 }
 
-interface TranscriptionResponse {
-  status: string;
-  files_count: number;
-  transcription: string;
-}
-
 export function Home() {
+  const [step, setStep] = useState<"upload" | "loading" | "output">("upload");
+  const [loadingLabel, setLoadingLabel] = useState<string>("Inicjalizacja...");
+  const [loadingPct, setLoadingPct] = useState<number>(0);
   const [previews, setPreviews] = useState<PreviewItem[]>([]);
   const [transcription, setTranscription] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
   const processFiles = (fileList: FileList | null) => {
     if (!fileList || fileList.length === 0) return;
 
-    // Filtrujemy tylko pliki graficzne (PIL nie obsługuje PDF bezpośrednio)
     const validFiles = Array.from(fileList).filter((f) =>
       f.type.startsWith("image/"),
     );
@@ -42,7 +37,6 @@ export function Home() {
     }));
 
     setPreviews((prev) => [...prev, ...newItems]);
-    setTranscription(null);
     setError(null);
   };
 
@@ -83,18 +77,27 @@ export function Home() {
     });
   };
 
+  const handleReset = () => {
+    previews.forEach((p) => URL.revokeObjectURL(p.url));
+    setPreviews([]);
+    setTranscription(null);
+    setError(null);
+    setLoadingPct(0);
+    setStep("upload");
+  };
+
   const handleUpload = async () => {
     if (previews.length === 0) return;
 
-    setIsLoading(true);
+    setStep("loading");
+    setLoadingLabel("Wysyłanie skanów na serwer...");
+    setLoadingPct(0);
     setError(null);
-    setTranscription(null);
 
     const formData = new FormData();
     previews.forEach((item) => {
       formData.append("files", item.file);
     });
-    // Domyślna liczba fragmentów
     formData.append("num_fragments", "3");
 
     try {
@@ -103,102 +106,136 @@ export function Home() {
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error(`Błąd serwera: ${response.status}`);
+      if (!response.ok || !response.body) {
+        throw new Error(
+          `Błąd serwera: ${response.status} ${response.statusText}`,
+        );
       }
 
-      const data = await response.json();
-      console.log("4. Dane JSON z backendu:", data);
+      // Odczytujemy strumień na żywo
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
 
-      // Ta linijka zawsze wyciągnie dane, niezależnie jak backend je nazwał:
-      const rawResult = data.transcription || data.results || data;
-      setTranscription(
-        typeof rawResult === "string"
-          ? rawResult
-          : JSON.stringify(rawResult, null, 2),
-      );
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || ""; // Zachowujemy niepełną linię do następnego fragmentu
+
+        for (const line of lines) {
+          if (!line.trim()) continue;
+
+          try {
+            const event = JSON.parse(line);
+
+            if (event.status === "progress") {
+              setLoadingLabel(event.label || "Przetwarzanie...");
+              if (typeof event.pct === "number") {
+                setLoadingPct(event.pct);
+              }
+            } else if (event.status === "done") {
+              const rawResult = event.transcription || event.results || event;
+              setTranscription(
+                typeof rawResult === "string"
+                  ? rawResult
+                  : JSON.stringify(rawResult, null, 2),
+              );
+              setStep("output");
+            } else if (event.status === "error") {
+              throw new Error(event.message || "Błąd podczas przetwarzania.");
+            }
+          } catch (jsonErr) {
+            console.warn("Błąd parsowania strumienia:", jsonErr, line);
+          }
+        }
+      }
     } catch (err: any) {
       setError(err.message || "Wystąpił błąd podczas wysyłania plików.");
-    } finally {
-      setIsLoading(false);
+      setStep("upload");
     }
   };
 
   return (
     <div className="container">
-      <h1>Microfilm Reader</h1>
-      <h2>Transkrypcja metryk kościelnych</h2>
+      {/* 1. EKRAN ŁADOWANIA ZE ZMIENNYMI INFORMACJAMI */}
+      {step === "loading" && <Loading label={loadingLabel} pct={loadingPct} />}
 
-      <div className="input-area">
-        <div
-          className={`upload-box ${isDragging ? "dragging" : ""}`}
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
-          onClick={() => document.getElementById("file-upload")?.click()}
-        >
-          <input
-            id="file-upload"
-            type="file"
-            multiple
-            accept="image/*"
-            onChange={handleFilesChange}
-          />
-          <p>
-            {isDragging
-              ? "Upuść skany tutaj..."
-              : "Kliknij lub przeciągnij skany metryk (JPG, PNG)"}
-          </p>
-        </div>
+      {/* 2. EKRAN WYNIKU */}
+      {step === "output" && (
+        <Output data={transcription} onReset={handleReset} />
+      )}
 
-        {previews.length > 0 && (
-          <div className="preview-section">
-            <h3>Podgląd skanów ({previews.length}):</h3>
-            <div className="preview-grid">
-              {previews.map((item) => (
-                <div key={item.id} className="preview-card">
-                  <img
-                    src={item.url}
-                    alt={item.file.name}
-                    className="image-preview"
-                  />
-                  <button
-                    type="button"
-                    className="delete-badge"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleRemoveFile(item.id);
-                    }}
-                    title="Usuń ten skan"
-                  >
-                    ✕
-                  </button>
-                </div>
-              ))}
+      {/* 3. EKRAN GŁÓWNY */}
+      {step === "upload" && (
+        <>
+          <h1>Microfilm Reader</h1>
+          <h2>Transkrypcja metryk kościelnych</h2>
+
+          <div className="input-area">
+            <div
+              className={`upload-box ${isDragging ? "dragging" : ""}`}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              onClick={() => document.getElementById("file-upload")?.click()}
+            >
+              <input
+                id="file-upload"
+                type="file"
+                multiple
+                accept="image/*"
+                onChange={handleFilesChange}
+              />
+              <p>
+                {isDragging
+                  ? "Upuść skany tutaj..."
+                  : "Kliknij lub przeciągnij skany metryk (JPG, PNG)"}
+              </p>
             </div>
+
+            {previews.length > 0 && (
+              <div className="preview-section">
+                <h3>Podgląd skanów ({previews.length}):</h3>
+                <div className="preview-grid">
+                  {previews.map((item) => (
+                    <div key={item.id} className="preview-card">
+                      <img
+                        src={item.url}
+                        alt={item.file.name}
+                        className="image-preview"
+                      />
+                      <button
+                        type="button"
+                        className="delete-badge"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleRemoveFile(item.id);
+                        }}
+                        title="Usuń ten skan"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <button
+              onClick={handleUpload}
+              disabled={previews.length === 0}
+              className="submit-btn"
+            >
+              Rozpocznij transkrypcję ({previews.length})
+            </button>
+
+            {error && <div className="error-box">{error}</div>}
           </div>
-        )}
-
-        <button
-          onClick={handleUpload}
-          disabled={previews.length === 0 || isLoading}
-          className="submit-btn"
-        >
-          {isLoading
-            ? `Przetwarzanie (${previews.length} skanów)...`
-            : `Rozpocznij transkrypcję (${previews.length})`}
-        </button>
-
-        {isLoading && (
-          <Loading
-            message={`Analizowanie ${previews.length} skanów przez Gemini AI...`}
-          />
-        )}
-
-        {error && <div className="error-box">{error}</div>}
-
-        <Output data={transcription} />
-      </div>
+        </>
+      )}
     </div>
   );
 }

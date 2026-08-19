@@ -3,9 +3,10 @@ import "./Output.css";
 
 interface OutputProps {
   data: string | null;
+  onReset: () => void;
 }
 
-export function Output({ data }: OutputProps) {
+export function Output({ data, onReset }: OutputProps) {
   const [copied, setCopied] = useState(false);
 
   if (!data) return null;
@@ -53,6 +54,10 @@ export function Output({ data }: OutputProps) {
       <pre className="output-code">
         <code>{data}</code>
       </pre>
+
+      <button type="button" onClick={onReset} className="back-btn">
+        ← Nowa transkrypcja (Powrót)
+      </button>
     </div>
   );
 }

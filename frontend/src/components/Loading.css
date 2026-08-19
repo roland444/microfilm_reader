@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.75rem 1.25rem;
+  padding: 2.5rem 1.5rem;
   background-color: #111827;
   border: 1px solid #1f2937;
   border-radius: 0.75rem;
@@ -12,8 +12,8 @@
 }
 
 .spinner {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border: 3px solid rgba(56, 189, 248, 0.15);
   border-top-color: #38bdf8;
   border-radius: 50%;
@@ -27,8 +27,36 @@
 }
 
 .loading-text {
-  font-size: 0.9rem;
-  color: #94a3b8;
+  font-size: 0.95rem;
+  color: #f1f5f9;
   font-weight: 500;
   letter-spacing: -0.01em;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Pasek postępu */
+.progress-bar-track {
+  width: 100%;
+  max-width: 340px;
+  height: 8px;
+  background-color: #1e293b;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  border: 1px solid #334155;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-pct {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-top: -0.25rem;
 }
