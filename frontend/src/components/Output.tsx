@@ -11,28 +11,34 @@ export function Output({ data }: OutputProps) {
   if (!data) return null;
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(data);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(data);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Błąd kopiowania:", err);
+    }
   };
 
   const handleDownload = () => {
     const blob = new Blob([data], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `metryka_transkrypcja_${Date.now()}.json`;
-    link.click();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `transkrypcja_${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
 
   return (
-    <section className="output-container">
+    <div className="output-container">
       <div className="output-header">
-        <h3>Wynik transkrypcji</h3>
+        <h3>Wynik transkrypcji (JSON)</h3>
         <div className="output-actions">
           <button type="button" onClick={handleCopy} className="action-btn">
-            {copied ? "Skopiowano!" : "Kopiuj JSON"}
+            {copied ? "✓ Skopiowano" : "Kopiuj"}
           </button>
           <button
             type="button"
@@ -43,7 +49,10 @@ export function Output({ data }: OutputProps) {
           </button>
         </div>
       </div>
-      <pre className="output-code">{data}</pre>
-    </section>
+
+      <pre className="output-code">
+        <code>{data}</code>
+      </pre>
+    </div>
   );
 }

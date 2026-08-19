@@ -1,6 +1,5 @@
 import "./App.css";
 import { Home } from "./components/Home";
-import { Output } from "./components/Output";
 
 const MOCK_DATA = JSON.stringify(
   [

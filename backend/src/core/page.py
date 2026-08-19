@@ -2,7 +2,6 @@ from utils.prompts import build_first_prompt
 from api.client import gemini_api
 from core.def_label import define_label
 from core.merge import merge_fragments
-from utils.progress import log_step, with_progress_bar, console
 import json
 
 class Page:
@@ -12,77 +11,82 @@ class Page:
         self.num = num
         self.img = img
 
-    def onePage(self):
+    def process(self, mode: str = "one"):
         width, height = self.img.size
 
+        yield {"status": "progress", "label": "Przetwarzanie nagłówków", "pct": 0}
         structure = self._read_structure()
+
         if structure is None:
-            return "Błąd: nie udało się odczytać struktury nagłówków."
-
-        context_prompt = build_first_prompt(structure)
-        fragments = list(self._generate_crops_one(width, height))
-        raw_data = self._process_fragments(fragments, context_prompt, label="Strona")
-
-        console.print(f"\n[dim]Zebrano {len(raw_data)} surowych fragmentów.[/dim]")
-        return self._merge(raw_data, structure)
-
-    def twoPages(self):
-        width, height = self.img.size
-        middle = width // 2
-
-        structure = self._read_structure()
-        if structure is None:
-            return "Błąd: nie udało się odczytać struktury nagłówków."
+            yield {"status": "error", "message": "Nie udało się odczytać struktury nagłówków."}
+            return
 
         context_prompt = build_first_prompt(structure)
 
-        left_crops = list(self._generate_crops_two(width, height, middle, side="lewa"))
-        right_crops = list(self._generate_crops_two(width, height, middle, side="prawa"))
+        if mode == "two":
+            middle = width // 2
+            columns = [
+                {"name": "left_page", "label": "Lewa strona", "x0": 0, "x1": middle, "pct_range": (10, 50)},
+                {"name": "right_page", "label": "Prawa strona", "x0": middle, "x1": width, "pct_range": (50, 90)}
+            ]
+        else:
+            columns = [
+                {"name": "single_page", "label": "Strona", "x0": 0, "x1": width, "pct_range": (10, 90)}
+            ]
+        
+        result = {}
 
-        left_raw = self._process_fragments(left_crops,  context_prompt, label="Lewa strona")
-        right_raw = self._process_fragments(right_crops, context_prompt, label="Prawa strona")
+        for col in columns:
+            crops = list(self._generate_crops(height, col["x0"], col["x1"]))
+            raw_data = []
 
-        merged_left = self._merge(left_raw,  structure)
-        merged_right = self._merge(right_raw, structure)
-        return {"lewa_strona": merged_left, "prawa_strona": merged_right}
+            stream = self._process_fragments_stream(
+                crops,
+                context_prompt,
+                label=col["label"],
+                pct_start=col["pct_range"][0],
+                pct_end=col["pct_range"][1]
+            )
 
-    def _generate_crops_one(self, width, height):
-        """Generator zwracający kolejne wycinki obrazu (jedna strona)."""
-        base_h   = height / self.num
-        overlap  = int(base_h * self.overlap_pct)
+            for update in stream:
+                if "status" in update and update["status"] == "progress":
+                    yield update
+                elif "result_data" in update:
+                    raw_data = update["result_data"]
+            
+            result[col["name"]] = self._merge(raw_data, structure)
+        
+        yield {"status": "progress", "label": "Finalizacja", "pct": 95}
+
+        final_output = result if mode == "two" else result["single_page"]
+        yield {"status": "done", "result": final_output, "pct": 100}
+
+    def _generate_crops(self, height, x0, x1):
+        base_h  = height / self.num
+        overlap = int(base_h * self.overlap_pct)
+
         for i in range(self.num):
             y0   = max(0, int(i * base_h) - overlap)
             y1   = min(height, int((i + 1) * base_h) + overlap)
-            crop = self.img.crop((0, y0, width, y1))
+            crop = self.img.crop((x0, y0, x1, y1))
+
             yield i, crop
 
-    def _generate_crops_two(self, width, height, middle, side="lewa"):
-        """Generator zwracający wycinki lewej lub prawej połowy obrazu."""
-        base_h  = height / self.num
-        overlap = int(base_h * self.overlap_pct)
-        for i in range(self.num):
-            y0 = max(0, int(i * base_h) - overlap)
-            y1 = min(height, int((i + 1) * base_h) + overlap)
-            if side == "lewa":
-                crop = self.img.crop((0, y0, middle, y1))
-            else:
-                crop = self.img.crop((middle, y0, width, y1))
-            yield i, crop
-
-    @with_progress_bar(label="Transkrypcja fragmentów", color="magenta")
-    def _process_fragments(self, fragments, context_prompt, label="", progress_callback=None):
-        """
-        Iterator przetwarzający fragmenty obrazu przez API.
-        Dekorator @with_progress_bar wstrzykuje progress_callback.
-        """
+    def _process_fragments_stream(self, fragments, context_prompt, label="", pct_start=0, pct_end=100):
         total = len(fragments)
         all_data = []
 
         for idx, (i, crop) in enumerate(fragments):
+            current_pct = int(pct_start + ((idx + 1) / total) * (pct_end - pct_start))
             frag_label = f"{label} — fragment {i + 1}/{total}"
 
-            if progress_callback:
-                progress_callback(idx, total, frag_label)
+            yield {
+                "status": "progress",
+                "label": frag_label,
+                "current": i + 1,
+                "total": total,
+                "pct": current_pct
+            }
 
             try:
                 response = gemini_api(context_prompt, crop)
@@ -94,26 +98,22 @@ class Page:
                 else:
                     all_data.append(parsed)
 
-            except json.JSONDecodeError as e:
-                console.print(f"  [yellow]⚠  Fragment {i+1}: błąd JSON — {e}[/yellow]")
+            except json.JSONDecodeError:
                 all_data.append({
                     "fragment": i + 1,
                     "błąd": "nieprawidłowy JSON",
-                    "surowa_odpowiedź": response.text
+                    "surowa_odpowiedź": getattr(response, "text", "")
                 })
             except Exception as e:
-                console.print(f"  [bold red]✗  Fragment {i+1}: {e}[/bold red]")
-                raise
+                all_data.append({
+                    "fragment": i + 1,
+                    "błąd": str(e)
+                })
 
-        if progress_callback:
-            progress_callback(total, total, f"{label} — ukończono")
+        yield {"result_data": all_data}
 
-        return all_data
-
-    @log_step("Analiza nagłówków tabeli", color="blue")
     def _read_structure(self):
         return define_label(self.img)
 
-    @log_step("Scalanie i deduplikacja fragmentów", color="yellow")
     def _merge(self, raw_data, structure):
         return merge_fragments(raw_data, structure)

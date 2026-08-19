@@ -1,4 +1,6 @@
 import { type ChangeEvent, type DragEvent, useState } from "react";
+import "./Home.css";
+import { Loading } from "./Loading";
 import { Output } from "./Output";
 
 interface PreviewItem {
@@ -20,11 +22,20 @@ export function Home() {
   const [error, setError] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
-  // Wspólna funkcja dodająca pliki
   const processFiles = (fileList: FileList | null) => {
     if (!fileList || fileList.length === 0) return;
 
-    const newItems: PreviewItem[] = Array.from(fileList).map((file) => ({
+    // Filtrujemy tylko pliki graficzne (PIL nie obsługuje PDF bezpośrednio)
+    const validFiles = Array.from(fileList).filter((f) =>
+      f.type.startsWith("image/"),
+    );
+
+    if (validFiles.length === 0) {
+      setError("Proszę wybrać pliki graficzne (JPG, PNG, TIFF, WEBP).");
+      return;
+    }
+
+    const newItems: PreviewItem[] = validFiles.map((file) => ({
       id: `${file.name}-${file.lastModified}-${Math.random()}`,
       file,
       url: URL.createObjectURL(file),
@@ -35,13 +46,11 @@ export function Home() {
     setError(null);
   };
 
-  // Wybór przez kliknięcie
   const handleFilesChange = (event: ChangeEvent<HTMLInputElement>) => {
     processFiles(event.target.files);
     event.target.value = "";
   };
 
-  // Obsługa przeciągania (Drag & Drop)
   const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -79,11 +88,14 @@ export function Home() {
 
     setIsLoading(true);
     setError(null);
+    setTranscription(null);
 
     const formData = new FormData();
     previews.forEach((item) => {
       formData.append("files", item.file);
     });
+    // Domyślna liczba fragmentów
+    formData.append("num_fragments", "3");
 
     try {
       const response = await fetch("http://127.0.0.1:8000/api/transcribe", {
@@ -95,8 +107,16 @@ export function Home() {
         throw new Error(`Błąd serwera: ${response.status}`);
       }
 
-      const data: TranscriptionResponse = await response.json();
-      setTranscription(data.transcription);
+      const data = await response.json();
+      console.log("4. Dane JSON z backendu:", data);
+
+      // Ta linijka zawsze wyciągnie dane, niezależnie jak backend je nazwał:
+      const rawResult = data.transcription || data.results || data;
+      setTranscription(
+        typeof rawResult === "string"
+          ? rawResult
+          : JSON.stringify(rawResult, null, 2),
+      );
     } catch (err: any) {
       setError(err.message || "Wystąpił błąd podczas wysyłania plików.");
     } finally {
@@ -121,13 +141,13 @@ export function Home() {
             id="file-upload"
             type="file"
             multiple
-            accept="image/*,application/pdf"
+            accept="image/*"
             onChange={handleFilesChange}
           />
           <p>
             {isDragging
               ? "Upuść skany tutaj..."
-              : "Kliknij lub przeciągnij skany metryk"}
+              : "Kliknij lub przeciągnij skany metryk (JPG, PNG)"}
           </p>
         </div>
 
@@ -169,9 +189,14 @@ export function Home() {
             : `Rozpocznij transkrypcję (${previews.length})`}
         </button>
 
+        {isLoading && (
+          <Loading
+            message={`Analizowanie ${previews.length} skanów przez Gemini AI...`}
+          />
+        )}
+
         {error && <div className="error-box">{error}</div>}
 
-        {/* Tutaj ma być wstawiony Output: */}
         <Output data={transcription} />
       </div>
     </div>
